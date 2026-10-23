@@ -1,0 +1,6 @@
+{
+  "name": "Placement AI - Campus Career Portal",
+  "description": "Multi-tenant placement portal with job drives dashboard, Gemini AI mock interview coach, timed aptitude practice tests, resume reviewer, automated email notifications, and Firestore persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

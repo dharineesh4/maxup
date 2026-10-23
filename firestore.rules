@@ -1,0 +1,47 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Institutions directory (readable by everyone, writable for initial setup)
+    match /institutions/{institutionId} {
+      allow read, write: if true;
+    }
+    
+    // Multi-tenant institution scoped collections
+    match /tenants/{tenantId} {
+      allow read, write: if true;
+
+      match /{allChildren=**} {
+        allow read, write: if true;
+      }
+    }
+
+    // Direct collections fallback / global sync
+    match /job_drives/{driveId} {
+      allow read, write: if true;
+    }
+
+    match /applications/{appId} {
+      allow read, write: if true;
+    }
+
+    match /interviews/{interviewId} {
+      allow read, write: if true;
+    }
+
+    match /resume_reviews/{reviewId} {
+      allow read, write: if true;
+    }
+
+    match /quiz_attempts/{attemptId} {
+      allow read, write: if true;
+    }
+
+    match /notifications/{notifId} {
+      allow read, write: if true;
+    }
+
+    match /students/{studentId} {
+      allow read, write: if true;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "entities": {
+    "institutions": {
+      "name": "Institution",
+      "description": "Registered colleges/universities for multi-tenant placement portals",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "code": { "type": "string" },
+        "logo": { "type": "string" },
+        "location": { "type": "string" },
+        "deanPlacement": { "type": "string" },
+        "contactEmail": { "type": "string" },
+        "activeDrivesCount": { "type": "number" },
+        "themeColor": { "type": "string" }
+      }
+    },
+    "job_drives": {
+      "name": "JobDrive",
+      "description": "Campus recruitment placement drives posted for students",
+      "properties": {
+        "institutionId": { "type": "string" },
+        "companyName": { "type": "string" },
+        "companyLogo": { "type": "string" },
+        "role": { "type": "string" },
+        "ctc": { "type": "string" },
+        "location": { "type": "string" },
+        "jobType": { "type": "string" },
+        "eligibilityCgpa": { "type": "number" },
+        "eligibleBranches": { "type": "array" },
+        "deadline": { "type": "string" },
+        "driveDate": { "type": "string" },
+        "description": { "type": "string" },
+        "rounds": { "type": "array" },
+        "status": { "type": "string" },
+        "applicantCount": { "type": "number" }
+      }
+    },
+    "applications": {
+      "name": "Application",
+      "description": "Student placement applications",
+      "properties": {
+        "institutionId": { "type": "string" },
+        "driveId": { "type": "string" },
+        "studentId": { "type": "string" },
+        "studentName": { "type": "string" },
+        "studentEmail": { "type": "string" },
+        "studentRoll": { "type": "string" },
+        "appliedAt": { "type": "string" },
+        "status": { "type": "string" },
+        "resumeUrl": { "type": "string" },
+        "latestUpdate": { "type": "string" }
+      }
+    },
+    "mock_interviews": {
+      "name": "MockInterview",
+      "description": "AI-powered mock interview sessions with Gemini coaching and scores",
+      "properties": {
+        "studentEmail": { "type": "string" },
+        "institutionId": { "type": "string" },
+        "role": { "type": "string" },
+        "techStack": { "type": "string" },
+        "difficulty": { "type": "string" },
+        "score": { "type": "number" },
+        "feedback": { "type": "string" },
+        "transcript": { "type": "array" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "resume_reviews": {
+      "name": "ResumeReview",
+      "description": "AI ATS and structural feedback for student resumes",
+      "properties": {
+        "studentEmail": { "type": "string" },
+        "institutionId": { "type": "string" },
+        "atsScore": { "type": "number" },
+        "targetRole": { "type": "string" },
+        "summary": { "type": "string" },
+        "strengths": { "type": "array" },
+        "improvements": { "type": "array" },
+        "missingKeywords": { "type": "array" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "quiz_attempts": {
+      "name": "QuizAttempt",
+      "description": "Aptitude and technical test practice results",
+      "properties": {
+        "studentEmail": { "type": "string" },
+        "institutionId": { "type": "string" },
+        "category": { "type": "string" },
+        "score": { "type": "number" },
+        "total": { "type": "number" },
+        "percentage": { "type": "number" },
+        "timeTakenSeconds": { "type": "number" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "notifications": {
+      "name": "Notification",
+      "description": "Automated email notifications simulated and persisted for deadline alerts and status updates",
+      "properties": {
+        "recipientEmail": { "type": "string" },
+        "recipientName": { "type": "string" },
+        "institutionId": { "type": "string" },
+        "subject": { "type": "string" },
+        "type": { "type": "string" },
+        "body": { "type": "string" },
+        "sentAt": { "type": "string" },
+        "read": { "type": "boolean" },
+        "relatedDriveId": { "type": "string" }
+      }
+    }
+  }
+}
